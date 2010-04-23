@@ -1,0 +1,6 @@
+<%= link_to 'users', users_path %>&nbsp;
+
+<% if @user %>
+<%= link_to @user.name.to_s , edit_user_path(@user) %>&nbsp;
+<%= link_to 'signout' , '/main/signout' %>
+<% end %>

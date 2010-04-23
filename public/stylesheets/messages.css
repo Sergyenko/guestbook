@@ -1,0 +1,72 @@
+/* 
+    Document   : messages.css
+    Created on : Mar 4, 2010, 3:22:19 PM
+    Author     : sergey
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+.mainContent{
+    margin: auto;
+    width: 800px;
+    background: #f2f5f6;
+    padding: 40px;
+}
+
+.mainMessage {
+    width: 100%;
+    background: #c7d7e1;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid rgb(160,160,160);
+    margin-bottom: 20px;
+}
+.mainMessageAvatar{
+    width: 100px;
+    height: 100px;
+}
+.mainMessageAvatar img{
+    border: 0px solid;
+}
+.mainMessageName{
+    text-align: left;
+    padding-left: 10px;
+}
+.mainMessagePostNumber{
+    padding-bottom: 5px;
+}
+.mainMessageDate{
+    width: 150px;
+    text-align: right;
+    padding-right: 10px;
+}
+.mainMessageOptions{
+    width: 100px;
+    height: 10px;
+    border-bottom: 1px solid rgb(160,160,160);
+    border-left: 1px solid rgb(160,160,160);
+    text-align: left;
+ }
+ .mainMessageOptions span{
+   padding: 0px 2px 0px 2px;
+ }
+ .br{
+   border-right: 1px solid rgb(160,160,160);
+ }
+ .mainMessageContent{
+     vertical-align: top;
+     text-align: left;
+     padding-left: 10px;
+ }
+.messageControls{
+    height: 10px;
+    text-align: left;
+    border-top: 1px solid rgb(160,160,160);
+}
+.messageControls a {
+    margin: 10px;
+}

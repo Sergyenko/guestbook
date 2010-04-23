@@ -1,0 +1,20 @@
+  <table id="smilestable">
+
+        <% @smiles.each do |row| %>
+        <tr>
+         <% row.each do |smile| %>
+          <td style="width: 52px; text-align: center;">
+             <%= link_to_remote image_tag("smiles/" + smile +".gif", :border =>'0'),
+                         :url => {
+                            :controller => 'main',
+                            :action => 'addbbtag',
+                            :bbtag => ' :' + smile +': '
+                          } %>
+          </td>
+          <% end %>
+        </tr>
+        <% end %>
+
+      </table>
+
+

@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag "main.css", :media => "all" %>
+<% if @user %>
+  <% if @user.group.id == 1 %>
+    <%= render :partial => 'admin_view' %>
+   <% else %>
+    <%= render :partial => 'users_view' %>
+  <% end %>
+<% else %>
+  <%= render :partial => 'users_view' %>
+<% end %>
+
+
+
+

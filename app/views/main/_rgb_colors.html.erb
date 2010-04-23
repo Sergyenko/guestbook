@@ -1,0 +1,18 @@
+<div id="rgbcolorswrapper" style="display: none"><center><table id="rgbcolorstable">
+
+        <% @rgb_colors.each do |row| %>
+        <tr>
+         <% row.each do |color| %>
+          <td bgcolor="<%= color %>">
+            <%= link_to_remote image_tag("colors/empty.gif", :border =>'0'),
+                               :url => {
+                                  :controller => 'main',
+                                  :action => 'addbbtag',
+                                  :bbtag => "[font color="+ color +"][/font]"
+                                } %>
+          </td>
+          <% end %>
+        </tr>
+        <% end %>
+
+      </table></center></div>

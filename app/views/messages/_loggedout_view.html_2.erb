@@ -1,0 +1,43 @@
+<% @messages.each do |message| %>
+<table class="mainMessage" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td class="mainMessageAvatar" rowspan="2">
+      <div>
+       <% if !message.user_avatar.blank? %>
+         <a href="<%= message.user_id != nil ? edit_user_path(message.user_id) : '' %>" >
+          <%= image_tag message.user_avatar %>
+         </a>
+       
+       <% end %>
+      </div>
+      <div class="mainMessagePostNumber">
+         <%  if !message.user_register_date %>
+              not register
+         <% else %>
+            post:&nbsp;<%= message.user_message_number %><br>
+         <% end %>
+      </div>
+    </td>
+    <td class="mainMessageName">
+      <%=  message.user_id != nil ? (link_to (h message.user_name), edit_user_path(message.user_id) ) : (h message.user_name) %>
+    </td>
+    <td class="mainMessageDate">
+       <%= message.created_at.to_s(:short) %>
+    </td>
+    <td class="mainMessageOptions">
+      <span class="br"><%= link_to 'comment', new_message_comment_url(message) %></span>
+      <span>v</span>
+    </td>
+  </tr>
+  <tr>
+    <td class="mainMessageContent" colspan="3">
+      <%= message.content %>
+    </td>
+  </tr>
+  <tr>
+    <td class="messageControls" colspan="4">
+       <%= link_to 'comment', new_message_comment_url(message) %>
+    </td>
+  </tr>
+</table>
+<% end %>

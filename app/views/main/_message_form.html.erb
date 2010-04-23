@@ -1,0 +1,50 @@
+<% form_for @message do |form| %>
+<table class="message_form" border="0">
+  <tr><td colspan="2">
+      <%= link_to_remote '<b>b</b>', :url => {:controller => 'main', :action => 'addbbtag', :bbtag => '[b][/b]'}, :html => {:style => 'text-decoration: none;'} %>
+      <%= link_to_remote '<u>u</u>', :url => {:controller => 'main', :action => 'addbbtag', :bbtag => '[u][/u]'}, :html => {:style => 'text-decoration: none;'} %>
+      <%= link_to_remote '<i>i</i>', :url => {:controller => 'main', :action => 'addbbtag', :bbtag => '[i][/i]'}, :html => {:style => 'text-decoration: none;'} %>
+      <%= link_to_remote '<s>s</s>', :url => {:controller => 'main', :action => 'addbbtag', :bbtag => '[s][/s]'}, :html => {:style => 'text-decoration: none;'} %>
+      <%= link_to_remote image_tag("colors/red.gif", :border =>'0'), :url => {:controller => 'main', :action => 'addbbtag', :bbtag => '[font color=#ff0000][/font]'} %>
+      <%= link_to_remote image_tag("colors/green.gif", :border =>'0'), :url => {:controller => 'main', :action => 'addbbtag', :bbtag => '[font color=#00ff00][/font]'} %>
+      <%= link_to_remote image_tag("colors/blue.gif", :border =>'0'), :url => {:controller => 'main', :action => 'addbbtag', :bbtag => '[font color=#0000ff][/font]'} %>
+      <%= link_to_function image_tag("colors/rgb.gif", :border =>'0'), "openRGBWindow()" %>
+      <%= link_to_function image_tag("smiles/sm1.gif", :border =>'0'), "openSmilesWindow()" %>
+      <%= link_to_remote 'h1', :url => {:controller => 'main', :action => 'addbbtag', :bbtag => '[h1][/h1]'}, :html => {:style => 'text-decoration: none;'} %>
+      <%= link_to_remote 'h2', :url => {:controller => 'main', :action => 'addbbtag', :bbtag => '[h2][/h2]'}, :html => {:style => 'text-decoration: none;'} %>
+    </td></tr>
+  <tr><td colspan="2" id="rgbcolors" style="display: none;">
+      <%= render :partial => "rgb_colors" %>
+     
+    </td></tr>
+<tr><td colspan="2"><%= form.text_area :content, :style => "width: 100%; height: 150px;" %></td></tr>
+<tr><td colspan="2">
+    <% @smiles_on_main.each do |smile| %>
+      <%= link_to_remote image_tag("smiles/" + smile +".gif", :border =>'0'),
+                         :url => {
+                            :controller => 'main',
+                            :action => 'addbbtag',
+                            :bbtag => ' :' + smile +': '
+                          } %>
+    <% end %>
+</td></tr>
+<tr><td class="login_area">
+
+ <% if @user %>
+  <%= hidden_field_tag :name, params[:name], :value => @user.name %>
+ <%  else %>
+ 
+  name:&nbsp;<%= text_field_tag :name, params[:name] %>
+  pass:&nbsp;<%= password_field_tag :password, params[:password] %>
+  reg:&nbsp;<%= check_box_tag :reg, params[:reg] %>
+ <% end %>
+
+</td>
+<td class="postbutton">
+  <%= form.submit 'post' %>
+</td>
+
+</tr>
+</table>
+
+<% end %>

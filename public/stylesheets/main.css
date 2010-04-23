@@ -1,0 +1,200 @@
+/* 
+    Document   : main
+    Created on : Feb 20, 2010, 11:14:01 PM
+    Author     : sergey
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+.errors{
+  margin: auto;
+  width: 800px;
+ }
+.message_form{
+  margin: auto;
+  width: 800px;
+  height: 150px;
+}
+.login_area{
+    vertical-align: top;
+}
+.comment_form{
+  margin: auto;
+  width: 800px;
+  height: 150px;
+}
+.text_for_comment{
+  margin: auto;
+  width: 800px;
+}
+.postbutton{
+    text-align: right;
+    vertical-align: top;
+    width: 50px;
+ }
+ 
+.messages{
+    margin: auto;
+    width: 800px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-color: rgb(160,160,160);
+}
+.userconsole{
+   margin: auto;
+   width: 800px;
+   text-align: right;
+}
+.avatars_on_main{
+   
+}
+.avatars_on_main img{
+    border: 0px solid;
+}
+.message{
+   padding: 10px 5px 5px 5px;
+}
+.comment{
+  width: 100%;
+  background: rgb(200,200,200);
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: rgb(160,160,160);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.comment div{
+  padding-left: 5px;
+  padding-bottom: 10px;
+}
+.name{
+   width: 100px;
+   vertical-align: top;
+   border-right: 1px solid;
+   border-bottom: 1px solid;
+   border-color: rgb(160,160,160);
+   padding: 5px 5px 5px 5px;
+}
+.created_at{
+   width: 100%;
+   text-align: right;
+}
+.content_message{
+    vertical-align: top;
+    width: 700px;
+    border-bottom: 1px solid;
+    border-color: rgb(160,160,160);
+    padding: 5px 5px 5px 5px;
+}
+
+.control{
+    width: 100%;
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.pagination{
+    margin: auto;
+    width: 800px;
+}
+.users{
+    margin: auto;
+    width: 800px;
+}
+.users td{
+    padding-bottom: 10px;
+    padding-top:    10px;
+    border-color: rgb(160,160,160);
+    border-bottom:  1px solid;
+}
+.w200px{
+    width: 200px;
+}
+.input_text_field{
+    width: 400px;
+}
+
+/* User Profile Editing Form */
+.user_profile_table{
+    margin: auto;
+    margin-top: 30px;
+    width: 800px;
+}
+.user_profile_lable{
+    width: 200px;
+    text-align: right;
+    padding-right: 10px;
+}
+.user_profile_text_field{
+
+}
+#user_profile_name{
+    color: rgb(140,140,140);
+    font-size: 30px;
+}
+#user_profile_avatar{
+    
+}
+#user_profile_avatar_image{
+    width: 100px;
+    padding: 5px 5px 5px 5px;
+    vertical-align: top;
+    text-align: center;
+    color: rgb(200,200,200);
+    font-size: 12px;
+
+}
+#user_profile_avatar_url{
+   
+}
+#user_profile_avatar_comment{
+    vertical-align: top;
+    text-align: right;
+    color: rgb(200,200,200);
+    font-size: 12px;
+    padding-right: 5px;
+}
+/* ====================== */
+
+/* User Profile Show */
+.user_profile_show_table{
+    padding-left: 10px;
+    width: 100%;
+}
+.user_profile_show_lable{
+    width: 130px;
+    padding-right: 10px;
+}
+/* ====================== */
+
+/* Helpers */
+.w100ps{
+    width: 100%;
+}
+.w250px{
+    width: 250px;
+}
+.w300px{
+    width: 300px;
+}
+.pb10{padding-bottom: 10px;}
+.pt10{padding-top: 10px;}
+.pl10{padding-left: 10px;}
+.pr10{padding-right: 10px;}
+.pt5 {padding-top: 5px;}
+
+.have_border_bottom{border-bottom: 1px solid rgb(200,200,200);}
+.have_border_top{border-top: 1px solid rgb(200,200,200);}
+.ver_al_top{
+    vertical-align: top;
+}
+/* ====================== */

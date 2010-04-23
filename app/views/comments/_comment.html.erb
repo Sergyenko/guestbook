@@ -1,0 +1,19 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<div>
+   <%= comment.user_name %>:
+   <%= comment.comment %>
+ <br>
+  <%= h comment.updated_at.to_s(:short) %>,
+  <% if @user %>
+    <%  if @user.id == comment.user_id && @user.name == comment.user_name || @user.group.id == 1 %>
+    [<%= link_to 'edit', edit_message_comment_url( :id => comment,
+                                                  :message_id => comment.message) %>]
+    [<%= link_to 'x', message_comment_url( :id => comment,
+                                               :message_id => comment.message),
+                                               :method => :delete %>]
+  <% end %>
+  <% end %>
+</div>

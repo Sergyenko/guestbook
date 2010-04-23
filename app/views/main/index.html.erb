@@ -1,0 +1,34 @@
+<%= javascript_include_tag "prototype","effects","prototype-ui","application" %>
+<%= stylesheet_link_tag "main", "messages",
+  "themes/window/window",
+  "themes/window/mac_os_x",
+  "themes/window/alphacube",
+  "themes/shadow/mac_shadow",
+  "themes/carousel/prototype-ui", :media => "all" %>
+
+<div class="mainContent">
+<div class="errors">
+  <%= render :partial => "errors" %>
+</div>
+   
+   <%= render :partial => "message_form" %>
+<br>
+<div class="userconsole">
+    <%= render :partial => "user_console" %>
+</div>
+<% unless @messages.empty? %>
+  <% if @user %>
+    <%= render :partial => "/messages/loggedin_view" %>
+  <% else %>
+    <%= render :partial => "/messages/loggedout_view" %>
+  <% end %>
+<% end %>
+<br><br>
+<div class="pagination">
+ <%= will_paginate @messages, :prev_label => '', :next_label => '' %>
+</div>
+</div>
+
+
+ 
+

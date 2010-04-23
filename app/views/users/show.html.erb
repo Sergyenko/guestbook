@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "main.css", :media => "all" %>
+<table class="user_profile_table" border="0" cellspacing="0">
+<tr>
+  <td id="user_profile_name" class="user_profile_lable have_border_bottom pb10">
+    <%= @user.name %>
+  </td><td class="have_border_bottom pb10">&nbsp;</td>
+</tr>
+<tr>
+  <td class="user_profile_lable have_border_bottom pb10 pt10 ver_al_top">
+    <%= @user.avatar.url == nil ? "&nbsp;" : ( image_tag @user.avatar.url ) %>
+  </td><td class="have_border_bottom pt10 ver_al_top">
+    <table border="0" class="user_profile_show_table" class="w100ps" cellspacing="0">
+      <tr><td class="user_profile_show_lable">Group:</td><td><%= @user.group.name %></td></tr>
+      <tr><td>Sex:</td><td><%= @user.passport.sex %></td></tr>
+      <tr><td>Posts:</td><td><%= @user.messages.size %></td></tr>
+      <tr><td class="pb10">Registered:</td><td class="pb10"><%= @user.created_at.to_s(:long)  %></td></tr>
+      <% if session[:user_id] != nil %>
+       <%= render :partial => 'private_info' %>
+      <% end %>
+      
+    </table>
+    
+  </td>
+</tr>
+</table>

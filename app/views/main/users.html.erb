@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "main.css", :media => "all" %>
+<table class="users" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="w200px">user</td><td>group</td><td>posts</td><td>register date</td><td>&nbsp;</td>
+  </tr>
+<% @users.each do |user| %>
+  <tr>
+    
+    <td><%= user.name %></td>
+    <td><%= user.group_id == nil ? "None" : user.group.name.to_s %></td>
+    <td><%= user.messages.size  %></td>
+    <td><%= user.created_at.to_s(:long) %></td>
+    <td><%= link_to 'delete', users_path(user.id), :method => :delete %></td>
+   </tr>
+<% end %>
+</table>
+
+
+

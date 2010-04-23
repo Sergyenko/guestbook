@@ -1,0 +1,44 @@
+
+ <table class="messages" cellspacing=0 cellpadding=0>
+ <% for message in @messages %>
+ <tr><td class="name">
+        <div><b><u>
+           <%=  message.user_id != nil ? (link_to (h message.user_name), edit_user_path(message.user_id) ) : (h message.user_name) %>
+        </u></b></div><br>
+        <div class="avatars_on_main">
+          <% if !message.user_avatar.blank? %>
+           <a href="<%= message.user_id != nil ? edit_user_path(message.user_id) : '' %>" >
+            <%= image_tag message.user_avatar %>
+           </a>
+          <% end %>
+        </div><br>
+     <div>
+            <%  if !message.user_register_date %>
+              not register
+            <% else %>
+              
+              <%= message.user_group %><br>
+              Post:&nbsp;<%= message.user_message_number %><br>
+              <%= message.user_register_date.day.to_s + "/" + message.user_register_date.month.to_s + "/" + message.user_register_date.year.to_s %>
+            <% end %>
+     </div>
+     </td>
+     <td class="content_message">
+        <div class="created_at">
+            <%= h message.created_at.to_s(:long) %>
+        </div>
+        <div class="message">
+            <%= message.content %>
+        </div>
+        <div class="control">
+            <%= link_to 'comment', new_message_comment_url(message) %>
+        </div>
+        <% unless message.comments.empty? %>
+        <div class="comment">
+          <%= render :partial => "/comments/comment", :collection => message.comments %>
+        </div>
+        <% end %>
+    </td>
+    </tr>
+    <% end %>
+  </table>

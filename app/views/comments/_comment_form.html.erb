@@ -1,0 +1,47 @@
+<% form_for :comment, :url => message_comments_url, :message_id => @message_id do |form| %>
+ <table class="messages" cellspacing=0 cellpadding=0>
+ <tr><td class="name">
+        <div><b><u>
+            <%= h @message.user_name %>
+        </u></b></div><br>
+     <div>
+            <%  if !@message.user_register_date %>
+              not register
+            <% else %>
+              <%= @message.user_group %><br>
+              Post:&nbsp;<%= @message.user_message_number %><br>
+              <%= @message.user_register_date.day.to_s + "/" + @message.user_register_date.month.to_s + "/" + @message.user_register_date.year.to_s %>
+            <% end %>
+     </div>
+     </td>
+     <td class="content_message">
+        <div class="created_at">
+            <%= h @message.created_at.to_s(:long) %>
+        </div>
+        <div class="message">
+            <%= @message.content %>
+        </div>
+       <% unless @message.comments.empty? %>
+       <div class="comment">
+          <%= render :partial => "/comments/comment", :collection => @message.comments %>
+        </div>
+       <% end %>
+     </td>
+    </tr>
+ </table>
+ <table class="comment_form">
+  <tr><td colspan="2"><%= form.text_area :comment, :style => "width: 100%; height: 150px;" -%></td></tr>
+    <tr><td>
+
+       <% if @user %>
+        <%= hidden_field_tag :name, params[:name], :value => @user.name%>
+       <%  else %>
+        name:&nbsp;<%= text_field_tag :name, params[:name] %>
+       <% end %>
+
+    </td>
+    <td class="postbutton">
+      <%= form.submit 'create' %>
+    </td></tr>
+</table>
+<% end %>

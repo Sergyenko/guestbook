@@ -1,0 +1,16 @@
+<table class="users" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="w200px">user</td><td>group</td><td>posts</td><td>register date</td><td>&nbsp;</td>
+  </tr>
+<% @users.each do |user| %>
+  <tr>
+
+    <td><%= link_to user.name, edit_user_path(user) %></td>
+    <td><%= user.group.name.to_s %></td>
+    <td><%= user.messages.size  %></td>
+    <td><%= user.created_at.to_s(:long) %></td>
+    <td><%= link_to 'delete', user_path(user), :method => :delete %></td>
+   
+  </tr>
+<% end %>
+</table>
