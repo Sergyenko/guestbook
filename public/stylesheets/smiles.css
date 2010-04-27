@@ -1,0 +1,20 @@
+/* 
+    Document   : smiles
+    Created on : Apr 27, 2010, 4:33:12 PM
+    Author     : sergey
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+.sm-paginator-active {
+    text-decoration: none;
+    color: red;
+}
