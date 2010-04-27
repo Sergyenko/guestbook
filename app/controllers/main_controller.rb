@@ -13,9 +13,6 @@ def index
   end
 
 end
-def carousel
-  @smiles = Message::SMILES
-end
 
 def signin
    

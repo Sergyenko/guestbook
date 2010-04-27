@@ -1,20 +1,54 @@
-  <table id="smilestable">
+ <div id="smileswrapper" style="display: none; margin: auto;">
+   
+ <% cols = 0 %>
+ <% rows = 0 %>
+ <% pid = 1 %>
+   
+ <div id="page<%= pid -%>" style="display: '';">
+   <table border="0" class="smiletable"><tr>
+   <% for i in (1..254) %>
 
-        <% @smiles.each do |row| %>
-        <tr>
-         <% row.each do |smile| %>
-          <td style="width: 52px; text-align: center;">
-             <%= link_to_remote image_tag("smiles/" + smile +".gif", :border =>'0'),
+     <% if cols == 3 %>
+       <td>
+
+       <%= link_to_remote image_tag("smiles/" +  @smiles[i] +".gif", :border =>'0'),
                          :url => {
                             :controller => 'main',
                             :action => 'addbbtag',
-                            :bbtag => ' :' + smile +': '
+                            :bbtag => ' :' +  @smiles[i] +': '
                           } %>
-          </td>
-          <% end %>
-        </tr>
-        <% end %>
+       </td>
+       <% rows += 1 %>
+       <% cols = 0 %>
+       </tr><tr>
+     <% else %>
+       <td>
+        <%= link_to_remote image_tag("smiles/" +  @smiles[i] +".gif", :border =>'0'),
+                         :url => {
+                            :controller => 'main',
+                            :action => 'addbbtag',
+                            :bbtag => ' :' +  @smiles[i] +': '
+                          } %>
+       </td>
+       <% cols += 1 %>
+     <% end %>
 
-      </table>
-
-
+     <% if rows == 4%>
+       <% pid += 1 %>
+       <% rows = 0 %>
+       </tr></table>
+       </div>
+       <div id="page<%= pid -%>" style="display: none;">
+       <table border="0" class="smiletable"><tr>
+     <% end %>
+       
+   <% end %>
+   </tr></table>
+   </div>
+   <br>
+   <center>
+   <% for i in (1..pid) %>
+    <%= link_to_function i, "smilesPaginator(page#{i})"  %>
+   <% end %>
+   </center>
+ </div>

@@ -76,18 +76,26 @@
 }
 
 #vertical_carousel {
+  
+  margin-left: 1px;
+  margin-top: 10px;
   float:left;
-  width: 160px;
-  height: 270px;
+  width: 345px;
+  height: 210px;
   margin-bottom: 10px;
   position: relative;
+  
 }
 
 #vertical_carousel .container {
-  float:left;  
-  width: 160px;
-  height: 140px;
+ float:left;
+  width: 315px;
+  height: 130px;
   overflow: hidden;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 #vertical_carousel ul {
@@ -100,48 +108,54 @@
 }
 
 #vertical_carousel ul li {
-  width: 160px;
-  height: 140px;
-  text-align: center;      
+  width: 315px;
+  height: 130px;
+  vertical-align: middle;
+  text-align: center;
   list-style:none;   
   float:left;
 }                         
 
 #vertical_carousel .previous_button {
   float:left;
-  height: 32px;
-  width: 175px;
-  background: url(prototype-ui/vertical/left.png);
-  cursor: pointer;    
+  height: 20px;
+  width: 345px;
+  /*background: url(prototype-ui/vertical/left.png);*/
+  
+  cursor: pointer;
   display:inline;
-  margin: 0 0 10px 40px;
+  
 }
 
 #vertical_carousel .previous_button_over {
-  background: url(prototype-ui/vertical/left_over.png);
+  /*background: url(prototype-ui/vertical/left_over.png);*/
+   background-color: green;
 }
 
 #vertical_carousel .previous_button_disabled {
-  background: url(prototype-ui/vertical/left_disabled.png);
+  /*background: url(prototype-ui/vertical/left_disabled.png);*/
+  
   cursor: default;
 }
 
 #vertical_carousel .next_button {
   float:left;
-  height: 32px;
-  width: 175px;
-  background: url(prototype-ui/vertical/right.png);
+  height: 20px;
+  width: 345px;
+  /*background: url(prototype-ui/vertical/right.png);*/
+  
   display:inline;
-  margin-left: 40px;
   cursor: pointer;
 }
 
 #vertical_carousel .next_button_over {
-  background: url(prototype-ui/vertical/right_over.png);
+  /*background: url(prototype-ui/vertical/right_over.png);*/
+   background-color: green;
 }
 
 #vertical_carousel .next_button_disabled {
-  background: url(prototype-ui/vertical/right_disabled.png);
+  /*background: url(prototype-ui/vertical/right_disabled.png);*/
+ 
   cursor: default;
 }
 

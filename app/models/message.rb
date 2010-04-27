@@ -50,16 +50,12 @@ class Message < ActiveRecord::Base
       "#ffff00","#ffff33","#ffff66","#ffff99","#ffffcc","#ffffff"
     ]
   ]
-  SMILES = [
-    ["sm1" ,"sm2" ,"sm3" ,"sm4" ,"sm5" ,"sm6" ,"sm7" ,"sm8"],
-    ["sm9","sm10","sm11","sm12","sm13","sm14","sm15","sm16"],
-    ["sm17","sm18","sm19","sm20","sm21","sm22","sm23","sm24"],
-    ["sm25","sm26","sm27","sm28","sm29","sm30","sm31","sm32"],
-    ["sm33","sm34","sm35","sm36","sm37","sm38","sm39","sm40"],
-    ["sm41","sm42","sm43","sm44","sm45","sm46","sm47","sm48"],
-    ["sm49","sm50","sm51","sm52","sm53","sm54","sm55","sm56"]
-    
-  ]
+  SMILES = Array.new()
+  SMILES[0] = 'sm1'
+  for i in (1..254)
+    SMILES[i] = 'sm' + i.to_s
+  end
+
   SMILES_ON_MAIN = [
     "sm12","sm15","sm17","sm36","sm20","sm28","sm52","sm54","sm51",
     "sm35","sm19","sm38","sm40","sm67","sm57","sm31","sm33","sm5",
