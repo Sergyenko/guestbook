@@ -46,10 +46,12 @@ function openSmilesWindow(){
 }
 
 function smilesPaginator(pageid){
+ 
   $$('#smileswrapper div').each(function(element){
       element.hide();
   });
-  $(pageid).show();
+ 
+ $(pageid).show();
   
   UI.defaultWM.getWindow($('smileswindow')).content.update($('smileswrapper').innerHTML);
 
