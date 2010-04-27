@@ -46,9 +46,12 @@
    </tr></table>
    </div>
    <br>
+  
    <center>
-   <% for i in (1..pid) %>
-    <%= link_to_function i, "smilesPaginator('page#{i}')"  %>
+   <%= link_to_function 1, "smilesPaginator('1')", :id => "link1", :class => "sm-paginator-active" %>
+   <% for i in (2..pid) %>
+    <%= link_to_function i, "smilesPaginator('#{i}')", :id => "link#{i}" %>
    <% end %>
    </center>
+ 
  </div>

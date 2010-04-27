@@ -45,14 +45,21 @@ function openSmilesWindow(){
   }
 }
 
-function smilesPaginator(pageid){
+function smilesPaginator(id){
  
   $$('#smileswrapper div').each(function(element){
       element.hide();
   });
+
+ $$('a.sm-paginator-active').each(function(element){
+     element.removeClassName('sm-paginator-active');
+ });
+ pid = 'page' + id;
+ lid = 'link' + id;
  
- $(pageid).show();
+ $(pid ).show();
+ $(lid ).addClassName('sm-paginator-active');
   
-  UI.defaultWM.getWindow($('smileswindow')).content.update($('smileswrapper').innerHTML);
+ UI.defaultWM.getWindow($('smileswindow')).content.update($('smileswrapper').innerHTML);
 
 }
