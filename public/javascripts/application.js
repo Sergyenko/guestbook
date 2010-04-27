@@ -34,7 +34,7 @@ function openSmilesWindow(){
        draggable: true,
        resizable: true,
        width: 350,
-       height: 290,
+       height: 260,
        minWidth: 350, minHeight: 260, maxWidth: 350, maxHeight: 260,
        top: 300,left: 50
    });
