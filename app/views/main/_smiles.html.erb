@@ -1,10 +1,10 @@
- <div id="smileswrapper" style="display: none; margin: auto;">
+ <div id="smileswrapper" style="display: none;">
    
  <% cols = 0 %>
  <% rows = 0 %>
  <% pid = 1 %>
    
- <div id="page<%= pid -%>" style="display: '';">
+ <div id="page<%= pid -%>" class="sm-pages-container">
    <table border="0" class="smiletable"><tr>
    <% for i in (1..254) %>
 
@@ -38,20 +38,20 @@
        <% rows = 0 %>
        </tr></table>
        </div>
-       <div id="page<%= pid -%>" style="display: none;">
+       <div id="page<%= pid -%>" style="display: none;" class="sm-pages-container">
        <table border="0" class="smiletable"><tr>
      <% end %>
        
    <% end %>
    </tr></table>
    </div>
-   <br>
-  
-   <center>
-   <%= link_to_function 1, "smilesPaginator('1')", :id => "link1", :class => "sm-paginator-active" %>
-   <% for i in (2..pid) %>
-    <%= link_to_function i, "smilesPaginator('#{i}')", :id => "link#{i}" %>
-   <% end %>
-   </center>
- 
+   
+   <br />
+
+   <div class="sm-paginator-container">
+     <%= link_to_function 1, "smilesPaginator('1')", :id => "link1", :class => "sm-paginator-active" %>
+     <% for i in (2..pid) %>
+      <%= link_to_function i, "smilesPaginator('#{i}')", :id => "link#{i}" %>
+     <% end %>
+   </div>
  </div>
