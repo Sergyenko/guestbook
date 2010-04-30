@@ -34,8 +34,8 @@ function openSmilesWindow(){
        draggable: true,
        resizable: true,
        width: 350,
-       height: 260,
-       minWidth: 350, minHeight: 260, maxWidth: 350, maxHeight: 260,
+       height: 270,
+       minWidth: 350, minHeight: 270, maxWidth: 350, maxHeight: 270,
        top: 300,left: 50
    });
        w.show();
@@ -47,7 +47,7 @@ function openSmilesWindow(){
 
 function smilesPaginator(id){
  
-  $$('#smileswrapper div').each(function(element){
+  $$('#smileswrapper div.sm-pages-container').each(function(element){
       element.hide();
   });
 

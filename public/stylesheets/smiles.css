@@ -14,7 +14,27 @@
 root { 
     display: block;
 }
+
+.smiletable{
+   width: 100%; height: 85%;
+}
+
+.smiletable td{
+    
+    text-align: center;
+    vertical-align: middle;
+}
+.sm-pages-container{
+    
+}
+
+.sm-paginator-container{
+    text-align: center;
+}
+
 .sm-paginator-active {
     text-decoration: none;
+    cursor: default;
     color: red;
+    vertical-align: middle;
 }

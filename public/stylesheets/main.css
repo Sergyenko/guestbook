@@ -116,13 +116,7 @@ root {
     border-color: rgb(160,160,160);
     border-bottom:  1px solid;
 }
-.smiletable{
-   width: 100%; height: 85%;
-}
-.smiletable td{
-    text-align: center;
-    vertical-align: middle;
-}
+
 .w200px{
     width: 200px;
 }
