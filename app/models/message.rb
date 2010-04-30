@@ -83,7 +83,7 @@ class Message < ActiveRecord::Base
         content = content.gsub(p[0].to_s,p[1].to_s)
     end
     if content.scan(":sm").size > 0
-        SMILES_ON_MAIN.each do |s|
+        SMILES.each do |s|
          content = content.gsub(":" + s.to_s + ":", "<img src='images/smiles/" + s.to_s + ".gif'>")
         end
     end
@@ -99,7 +99,7 @@ class Message < ActiveRecord::Base
   end
   def self.format_return(content)
     if content.scan("<img src='images/smiles/sm").size > 0
-        SMILES_ON_MAIN.each do |s|
+        SMILES.each do |s|
          content = content.gsub("<img src='images/smiles/" + s.to_s + ".gif'>" , ":" + s.to_s + ":")
         end
     end
